@@ -57,11 +57,11 @@
     								</div>
                                 @if (Context.Session.GetString("MaKh") != null)
                                 {
-                                    <span class="buy" onclick="AddToCartList(@item.MaSp)">Thêm Vào Giỏ +</span>
+                                    <span class="buy">Thêm Vào Giỏ +</span>
                                 }
                                 else
                                 {
-                                     <span class="buy"><a asp-action="Login" asp-controller="Home" class="p-head" style="text-decoration:none;">Thêm Vào Giỏ +</a></span>
+                                     <span class="buy"><a class="p-head" style="text-decoration:none;">Thêm Vào Giỏ +</a></span>
                                 }
 
     							</div>

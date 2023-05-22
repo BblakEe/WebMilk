@@ -63,14 +63,14 @@
         <div class="header" style="z-index: 10 !important;">
             <ul class="header-nav mb-0">
                 <a asp-action="Index" asp-controller="Home"><img class="logo-header" src="~/img/logo.png" alt=""></a>
-                <li><a asp-action="EditProfile" asp-controller="Home">GIỚI THIỆU</a>
+                <li><a>GIỚI THIỆU</a>
                     <ul class="header-subnav">
                         <li><a href="">LỊCH SỬ</a></li>
                         <li><a href="">CHÍNH SÁCH & QUY ĐỊNH</a></li>
                     </ul>
                 </li>
                 <li><a asp-action="Index" asp-controller="SanPham">SẢN PHẨM</a></li>
-                <li><a asp-action="Index" asp-controller="TinTuc">TIN TỨC</a>
+                <li><a>TIN TỨC</a>
                     <ul class="header-subnav">
                         <li><a href="">KHUYẾN MÃI</a></li>
                         <li><a href="">THÔNG TIN</a></li>
@@ -80,7 +80,7 @@
                 <li><a href="">HỖ TRỢ</a>
                     <ul class="header-subnav">
                         <li><a href="">DỊCH VỤ</a></li>
-                        <li><a asp-action="Index" asp-controller="GioHang">LIÊN HỆ</a></li>
+                        <li><a>LIÊN HỆ</a></li>
                         <li><a href="">BÁO CÁO</a></li>
                     </ul>
                 </li>
@@ -89,7 +89,7 @@
             @if (Context.Session.GetString("MaKh") != null)
             {
             <div class="giohang-header" id="CartCount">
-                <a asp-action="Index" asp-controller="GioHang"><img class="cart" src="~/img/cart.png" alt=""></a>
+                <a><img class="cart" src="~/img/cart.png" alt=""></a>
                 @* @if(gio != null)
                 {
                <a asp-action="Index" asp-controller="GioHang" >
@@ -107,14 +107,14 @@
             </div>
            
                  <div class="dangnhap-button">
-                <a asp-action="UserDashboard" asp-controller="Home" style="text-decoration: none;"><i class="ti-user"></i> @Context.Session.GetString("TenKh").ToString()</a>
+                <a style="text-decoration: none;"><i class="ti-user"></i> @Context.Session.GetString("TenKh").ToString()</a>
             </div>
             
             }
             else
             {
             <div class="dangnhap-button">
-                <a asp-action="Login" asp-controller="Home" style="text-decoration:none;"><i class="ti-user"></i> Login</a>
+                <a style="text-decoration:none;"><i class="ti-user"></i> Login</a>
             </div>
             }
             
@@ -180,33 +180,6 @@
       <script type="text/javascript" src="~/js/slides.js"></script>
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript">
-           function AddToCartList(Id){
-               $.ajax({
-                   url: '/giohang/add-cart',
-                   type: 'POST',
-                   data:{ maSP: Id, soLuong: 1},
-                  success: function(){
-                         Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'Thêm thành công',
-                        showConfirmButton: false,
-                        timer: 1500
-                        });
-                        
-                           },
-                    error: function(){
-                         Swal.fire({
-                    icon: 'error',
-                    title: 'Thất bại',
-                    text: 'Đã có lỗi xảy ra',
-                     showConfirmButton: false,
-                        timer: 1500
-                    });
-                    }
-               });
-
-           }
 
            function loadHeader(){
                 location.reload();
